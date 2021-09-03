@@ -32,7 +32,16 @@ import random
 
 
 def one(string):
-    return
+    lisp = list(string)
+    out = []
+    string2 = ''
+    for i in range(len(lisp)):
+        out.append(lisp[i])
+        out.append(lisp[i])
+        out.append(lisp[i])
+    for i in range(len(out)):
+        string2 += out[i]
+    return string2
 
     # <QUESTION 2>
 
@@ -51,7 +60,12 @@ def one(string):
 
 
 def two(num):
-    return
+    if num < 2:
+        return False
+    for i in range(2, num):
+        if num%i==0:
+            return False
+    return True
 
     # <QUESTION 3>
 
@@ -69,7 +83,12 @@ def two(num):
 
 
 def three(a):
-    return
+    a1 = int( "%s" % a)
+    a2 = int( "%s%s" % (a,a))
+    a3 = int( "%s%s%s" % (a,a,a))
+    a4 = int( "%s%s%s%s" % (a,a,a,a))
+    total = (a1+a2+a3+a4)
+    return total
 
     # <QUESTION 4>
 
@@ -99,7 +118,8 @@ def three(a):
 
 
 def four(string1, string2):
-    return
+    output = ''.join(map(''.join, zip(string1, string2)))
+    return output
 
     # <QUESTION 5>
 
@@ -117,7 +137,9 @@ def four(string1, string2):
 
 
 def five():
-    return
+    
+    ([]).append(random.sample([i for i in range(100,200) if i%2==0], 5))
+    return []
 
     # <QUESTION 6>
 
@@ -137,7 +159,10 @@ def five():
 
 
 def six(string):
-    return
+    string = string.lower()
+    check = string.endswith("py")
+
+    return check
 
     # <QUESTION 7>
 
@@ -162,7 +187,11 @@ def six(string):
 
 
 def seven(a, b, c):
-    return
+    if (a - b == c - b) or (a - c == c - b) or (a - b == c - a):
+        return True
+    
+    else:
+     return False
 
     # <QUESTION 8>
 
@@ -181,6 +210,7 @@ def seven(a, b, c):
 
 
 def eight(string, num):
+
     return
 
     # <QUESTION 9>
@@ -200,7 +230,17 @@ def eight(string, num):
 
 def nine(string1, string2):
     # make sure string1 is the shortest of the two
-    return
+    s1 = len (string1)
+    s2 = len (string2)
+
+    string1 = sorted(string1)
+    string2 = sorted(string2)
+
+    for i in range(0,s1):
+        if string1[i] != string2[i]:
+            return False
+
+    return True
 
     # <QUESTION 10>
 
@@ -219,4 +259,9 @@ def nine(string1, string2):
 
 
 def ten(a, b):
-    return
+    array = [[0 for col in range(a)]for row in range(b)]
+
+    for row in range (b):
+        for col in range(a):
+            array[row][col]= row*col
+    return array
